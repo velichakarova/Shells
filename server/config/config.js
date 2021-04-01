@@ -1,7 +1,7 @@
 const config = {
     development:{
-        PORT:5000,
-        DB_CONNECTION:'mongodb://localhost/shells',
+        PORT:5000, 
+        DB_CONNECTION:"mongodb://localhost/shell",
         SALT_ROUND:10,
         SECRET:'someTingStrong',
         COOKIE_NAME: 'USER_SESSION',
