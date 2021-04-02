@@ -1,5 +1,5 @@
 import * as ReactBootStrap from "react-bootstrap";
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { FiFacebook } from "react-icons/fi";
 
 const Footer = () => {

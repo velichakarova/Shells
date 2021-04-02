@@ -28,11 +28,11 @@ const Header = () => {
       <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
         <ReactBootStrap.Nav className="mr-auto">
 
-          <ReactBootStrap.Nav.Link as={NavLink} to="/social">
-           Social
+          <ReactBootStrap.Nav.Link as={NavLink} to="/login">
+           Login
           </ReactBootStrap.Nav.Link>
-          <ReactBootStrap.Nav.Link as={NavLink} to="/contact">
-           Contact
+          <ReactBootStrap.Nav.Link as={NavLink} to="/register">
+         Register
           </ReactBootStrap.Nav.Link>
           <ReactBootStrap.NavDropdown
             title="Dropdown"

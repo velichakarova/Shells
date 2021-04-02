@@ -12,7 +12,7 @@ router.post('/register', async(req,res)=>{
 router.post('/login', async(req,res)=>{
    const {username, password} = req.body
     let token = await userService.login({username, password});
-    
+    // res.header("Authorization",token).sendStatus(user)
     res.status(200).json({
         COOKIE_NAME,
         token,
