@@ -5,6 +5,7 @@ const productSchema = new mongoose.Schema({
    model:String,
    imgURL:String,
    description:String,
+   price:Number,
    post:[],
    owner: {
     type: mongoose.Types.ObjectId,

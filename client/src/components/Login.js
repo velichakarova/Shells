@@ -56,7 +56,7 @@ class Login extends Component {
       console.log(data);
     })
 
-    this.props.history.push('/')
+    // this.props.history.push('/')
    }
 
    handleBlur=()=>{

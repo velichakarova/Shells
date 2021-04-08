@@ -54,8 +54,8 @@ const Header = () => {
           </ReactBootStrap.NavDropdown>
         </ReactBootStrap.Nav>
         <ReactBootStrap.Nav>
-          <ReactBootStrap.Nav.Link href="#deets">
-            More deets
+          <ReactBootStrap.Nav.Link as={NavLink} to="/product/create">
+           Sell your Mobile
           </ReactBootStrap.Nav.Link>
           <ReactBootStrap.Nav.Link eventKey={2} href="#memes">
             Dank memes

@@ -4,7 +4,7 @@ import * as ReactBootStrap from "react-bootstrap";
 const Home = () => {
   return (
     <ReactBootStrap.Container >
-      <img src={image} alt="" hight="120%vh" width="120%vw"/>
+      <img src={image} alt="" width="100%"/>
     </ReactBootStrap.Container>
   );
 };

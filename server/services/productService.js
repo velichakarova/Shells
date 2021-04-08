@@ -19,8 +19,8 @@ async function getOne(id){
     if(!product.description){
         throw {massage:'Description should be at least 12 charectes'}
     }
-    
-    return  product.save();
+    product.save()
+    return  product;
 }
 
 module.exports = {

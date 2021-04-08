@@ -10,7 +10,7 @@ router.get('/', (req,res)=>{
         res.json(products)
     })
 })
-router.post('/create',isAuth, async (res,req)=>{
+router.post('/create', async (res,req)=>{
         console.log(req.user);
         console.log(req.body);
        await productService.create(req.body, req.user._id)

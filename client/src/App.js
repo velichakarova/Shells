@@ -6,6 +6,8 @@ import Footer from "./components/layout/Footer/footer";
 import Home from './components/Home/Home';
 import Login from './components/Login';
 import Register from './components/Register'
+// import Main from './components/Product/Main'
+import CreateProduct from './components/CreateProduct';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
             <Route path='/' exact component={Home}/>
             <Route path='/login' exact component={Login}/>
             <Route path='/register' exact component={Register}/>
+            {/* <Route path = '/product' component={Main}/> */}
+            <Route path='/product/create'component={CreateProduct}/>
      </Switch>
      <Footer />
     </div>
