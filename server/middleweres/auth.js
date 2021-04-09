@@ -5,7 +5,7 @@ function auth(req, res, next) {
   let authorisationHeaader = req.get("Authorization");
 
   if (authorisationHeaader) {
-    let token = authorisationHeaader.split(" ")[1]; //Bearer${token}
+    let token = authorisationHeaader; //Bearer${token}
 
     let decoded = jwt.verify(token, SECRET);
     req.user = decoded;

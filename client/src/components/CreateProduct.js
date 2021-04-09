@@ -54,7 +54,8 @@ class CreateProduct extends Component {
         description,
         price}),
       headers:{
-        'Content-Type':'application/json'
+        'Content-Type':'application/json',
+        // 'Authorization':`Bearer ${token}`
       }
     }).then(promise=>{
       console.log(promise);

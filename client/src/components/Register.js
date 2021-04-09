@@ -1,7 +1,8 @@
 /* eslint-disable no-useless-constructor */
 import * as ReactBootStrap from "react-bootstrap";
 import { Component} from 'react';
-import Input from './Input'
+import Input from './Input';
+import authenticate from '../utils/authenticate'
 
 class Register extends Component {
    constructor(props){
@@ -32,7 +33,7 @@ class Register extends Component {
       rePassword:event.target.value
     })
    }
-   hendleSubmit =(event)=>{
+   hendleSubmit = async (event)=>{
      event.preventDefault();
     const {
       username,
@@ -47,24 +48,17 @@ class Register extends Component {
       console.log("There is an error")
       return
     }
-      
-    fetch("http://localhost:5000/api/auth/register",{
-      method:'POST',
-      body:JSON.stringify({
-        username,
-        password, 
-        rePassword}),
-      headers:{
-        'Content-Type':'application/json'
-      }
-    }).then(promise=>{
-      console.log(promise);
-      return promise.json()
-    }).then(data=>{
-      console.log(data);
-    })
-
-    this.props.history.push('/login')
+    await authenticate("http://localhost:5000/api/auth/register",
+    {
+      username,
+      password,
+      rePassword
+    },()=>{
+      console.log('bababba')
+      this.props.history.push('/')
+    },(e)=>{
+    console.log('Error', e)})
+    
    }
 
    handleBlur=()=>{

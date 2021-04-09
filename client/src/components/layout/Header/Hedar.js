@@ -21,7 +21,7 @@ const Header = () => {
            className="d-inline-block align-top"
            alt="logo"
            />{' '}
-        VChakarova
+        Shells
         
       </ReactBootStrap.Navbar.Brand>
       <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />

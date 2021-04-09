@@ -10,6 +10,11 @@ router.post('/register', async(req,res)=>{
 
    
     let user = await userService.register({...req.body});
+    let token = jwt.sign({
+        _id:user._id,
+        username:user.username
+    },SECRET, {expiresIn:'2h'})
+    res.header("Authorization",token).send(user)
     res.status(201).json({_id: user._id})
      
 });
@@ -20,7 +25,7 @@ router.post('/login', (req,res,next)=>{
     User.where({username})
         .findOne()
             .then(user=>{
-                console.log(user);
+                // console.log(user);
                 if(!user){
                     throw {message:'User not found!'}
                 }
@@ -32,7 +37,7 @@ router.post('/login', (req,res,next)=>{
                 let token = jwt.sign({
                     _id:user._id,
                     username:user.username
-                },SECRET, {expiresIn:'1h'})
+                },SECRET, {expiresIn:'2h'})
                 res.header("Authorization",token).send(user)
                 
             })
@@ -41,6 +46,14 @@ router.post('/login', (req,res,next)=>{
                
             })
             
+})
+router.post('/logout',(req,res)=>{
+    
+    const token = req.cookies[config.COOKIE_NAME];
+       res.clearCookie(config.COOKIE_NAME).send('Logout successfully!');
+           
+           
+    
 })
 
 
