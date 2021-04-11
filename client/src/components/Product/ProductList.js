@@ -1,8 +1,9 @@
 /* eslint-disable no-useless-constructor */
 
-import getAll from '../services/postService.js'
+import getAll from './services.js/productService'
 import Main from './Main'
 import {Component} from 'react';
+import UserContext from '../../Context'
 
 class ProductListComponent extends Component{
     constructor(props){
@@ -12,6 +13,9 @@ class ProductListComponent extends Component{
             products:[]
         }
     }
+    
+    static contextType= UserContext
+
     componentDidMount(){
         getAll()
         .then(products =>{
@@ -21,6 +25,8 @@ class ProductListComponent extends Component{
 
 
 render(){
+    console.log(`tukkkk`);
+    console.log(this.context);
     return(
         <Main products={this.state.products} />
     )

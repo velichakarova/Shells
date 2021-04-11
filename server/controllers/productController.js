@@ -4,7 +4,7 @@ const {isAuth} = require('../middleweres/auth');
 const productService = require('../services/productService')
 const router = Router();
 
-router.get('/',isAuth ,(req,res)=>{
+router.get('/' ,(req,res)=>{
     Product.find()
     .then(products => {
         res.json(products)

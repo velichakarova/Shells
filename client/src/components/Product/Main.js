@@ -1,15 +1,16 @@
-import * as ReactBootStrap from "react-bootstrap";
-import Product from './Product'
+// import * as ReactBootStrap from "react-bootstrap";
+import Product from './Product';
+
 
 const Main = ({
     products
 })=>{
 
     return(
-        <ReactBootStrap.Container>
-    <main>
+        // <ReactBootStrap.Container>
+        <div>
        <h1>Mobile for Everyone</h1>
-       <div>
+    
            
         {products.map(x=>
             <Product
@@ -20,9 +21,9 @@ const Main = ({
                 price={x.price}
             />
         )}
-       </div>
-       </main>
-       </ReactBootStrap.Container>
+     
+        </div>
+    //    </ReactBootStrap.Container>
     )
 
         }

@@ -1,7 +1,8 @@
 /* eslint-disable no-useless-constructor */
 import * as ReactBootStrap from "react-bootstrap";
 import { Component} from 'react';
-import Input from './Input'
+import Input from './Input';
+// import getCookie from '../utils/cookie'
 
 class CreateProduct extends Component {
    constructor(props){
@@ -46,7 +47,7 @@ class CreateProduct extends Component {
 
     
       
-    fetch("http://localhost:5000/api/product/create",{
+   fetch("http://localhost:5000/api/product/create",{
       method:'POST',
       body:JSON.stringify({
         model,
@@ -55,7 +56,7 @@ class CreateProduct extends Component {
         price}),
       headers:{
         'Content-Type':'application/json',
-        // 'Authorization':`Bearer ${token}`
+        'Authorization': document.cookie
       }
     }).then(promise=>{
       console.log(promise);

@@ -3,6 +3,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import { Component } from "react";
 import Input from "./Input";
 import authenticate from '../utils/authenticate'
+import UserContext from "../Context";
 
 class Login extends Component {
   constructor(props) {
@@ -15,6 +16,9 @@ class Login extends Component {
       passwordError: false,
     };
   }
+
+  static contextType= UserContext
+
   changeUsername = (event) => {
     this.setState({
       username: event.target.value,
@@ -30,6 +34,8 @@ class Login extends Component {
     event.preventDefault();
     const { username, password, usernameError, passwordError } = this.state;
 
+    
+
     if (usernameError || passwordError) {
       console.log("There is an error");
       return;
@@ -38,8 +44,10 @@ class Login extends Component {
       {
         username,
         password
-      },()=>{
-        console.log('bababba')
+      },(user)=>{
+        console.log("logiin context")
+        console.log(this.context);
+        this.context.logIn(user)
         this.props.history.push('/')
       },(e)=>{
       console.log('Error', e)})

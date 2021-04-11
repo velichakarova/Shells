@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const userService= require('../services/userServices')
-const {COOKIE_NAME} = require('../config/config')
+const {cookieName} = require('../config/config')
 const User= require('../models/User')
 const jwt = require('jsonwebtoken');
 const { SALT_ROUND, SECRET} = require('../config/config');

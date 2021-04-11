@@ -2,13 +2,15 @@ const jwt = require("jsonwebtoken");
 const { SECRET } = require('../config/config')
 
 function auth(req, res, next) {
-  let authorisationHeaader = req.get("Authorization");
+  let authorisationHeaader = req.headers.authorization || '';
 
   if (authorisationHeaader) {
     let token = authorisationHeaader; //Bearer${token}
 
-    let decoded = jwt.verify(token, SECRET);
+    let decoded = jwt.verify(token, SECRET)
+
     req.user = decoded;
+    
   }
   next();
 }

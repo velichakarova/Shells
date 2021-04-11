@@ -2,7 +2,8 @@
 import * as ReactBootStrap from "react-bootstrap";
 import { Component} from 'react';
 import Input from './Input';
-import authenticate from '../utils/authenticate'
+import authenticate from '../utils/authenticate';
+import UserContext from '.././Context'
 
 class Register extends Component {
    constructor(props){
@@ -18,6 +19,7 @@ class Register extends Component {
 
      }
    }
+   static contextType= UserContext
    changeUsername = (event)=>{
     this.setState({
       username:event.target.value
@@ -53,8 +55,10 @@ class Register extends Component {
       username,
       password,
       rePassword
-    },()=>{
-      console.log('bababba')
+    },(user)=>{
+      console.log("register context")
+        console.log(this.context);
+        this.context.logIn(user)
       this.props.history.push('/')
     },(e)=>{
     console.log('Error', e)})
