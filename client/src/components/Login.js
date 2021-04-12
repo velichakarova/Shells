@@ -17,7 +17,7 @@ class Login extends Component {
     };
   }
 
-  static contextType= UserContext
+  static contextType= UserContext;
 
   changeUsername = (event) => {
     this.setState({

@@ -2,7 +2,7 @@
 import { Component } from  'react';
 import UserContext from './Context'
 
-class CookieCopmponent extends Component{
+class AppComponent extends Component{
     constructor(props){
         super(props)
 
@@ -41,4 +41,4 @@ class CookieCopmponent extends Component{
 
 }
 
-export default CookieCopmponent;
+export default AppComponent;

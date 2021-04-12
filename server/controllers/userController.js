@@ -20,7 +20,7 @@ router.post('/register', async(req,res)=>{
 });
 router.post('/login', (req,res,next)=>{
 
-    console.log(req.body);
+    // console.log(req.body);
     const {username, password} = req.body;
     User.where({username})
         .findOne()

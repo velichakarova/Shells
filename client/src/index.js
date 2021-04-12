@@ -5,15 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
-import CookieCopmponent from './CookiCompenent'
+import AppComponent from './AppComponent';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CookieCopmponent>
+    <AppComponent>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-      </CookieCopmponent>
+      </AppComponent>
   </React.StrictMode>,
   
   document.getElementById('root')

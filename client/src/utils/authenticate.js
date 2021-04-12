@@ -10,7 +10,7 @@ const authenticate = async (url,body,onSucces, onFailere)=>{
         });
         const authToken = promise.headers.get("Authorization");
         console.log(authToken);
-        document.cookie = `x-auth-token=${authToken}`;
+        localStorage.setItem('userToken', authToken);
         // console.log(document.cookie);
   
         const response = await promise.json();

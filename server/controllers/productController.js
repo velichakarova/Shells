@@ -10,19 +10,37 @@ router.get('/' ,(req,res)=>{
         res.json(products)
     })
 })
-router.post('/create',isAuth, (res,req)=>{
+router.post('/create',isAuth, (req, res,next)=>{
+    console.log("create/ post ");
         console.log(req.user);
         console.log(req.body);
 
-        let product = new Product (req.body, {owner:req.user._id})
+
+        const owner = req.user._id
+        const {model,
+            imgURL,
+            description,
+            price }= req.body
+
+
+    let product = new Product ({model,
+        imgURL,
+        description,
+        price, owner})
+        console.log(product);
+
         product.save()
         .then(createProduct=>{
-            res.status(201).json({_id: createProduct._id})
+            res.status(201).json(createProduct)
+            console.log(createProduct);
         })
-    //    let product = await productService.create(req.body, req.user._id)
-    //   
+        .catch(err=>{
+            next({status:404, massage:'Error from create', type:'ERROR'})
+           
+        })
+    
+});
 
-})
 
 
 module.exports = router;

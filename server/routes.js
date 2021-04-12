@@ -5,7 +5,7 @@ const productController = require('./controllers/productController');
 const homeController = require('./controllers/homeController')
 
 // const router = Router();
-router.use('/', homeController);
+
 router.use('/auth', userController);
  router.use('/product', productController);
 
